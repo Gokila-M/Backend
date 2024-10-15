@@ -1,0 +1,527 @@
+{
+	"info": {
+		"_postman_id": "2738b94a-3227-489d-be23-3b9e50e6ffc7",
+		"name": "Mern-Stack task",
+		"description": "# 🚀 Get started here\n\nThis template guides you through CRUD operations (GET, POST, PUT, DELETE), variables, and tests.\n\n## 🔖 **How to use this template**\n\n#### **Step 1: Send requests**\n\nRESTful APIs allow you to perform CRUD operations using the POST, GET, PUT, and DELETE HTTP methods.\n\nThis collection contains each of these [request](https://learning.postman.com/docs/sending-requests/requests/) types. Open each request and click \"Send\" to see what happens.\n\n#### **Step 2: View responses**\n\nObserve the response tab for status code (200 OK), response time, and size.\n\n#### **Step 3: Send new Body data**\n\nUpdate or add new data in \"Body\" in the POST request. Typically, Body data is also used in PUT request.\n\n```\n{\n    \"name\": \"Add your name in the body\"\n}\n\n ```\n\n#### **Step 4: Update the variable**\n\nVariables enable you to store and reuse values in Postman. We have created a [variable](https://learning.postman.com/docs/sending-requests/variables/) called `base_url` with the sample request [https://postman-api-learner.glitch.me](https://postman-api-learner.glitch.me). Replace it with your API endpoint to customize this collection.\n\n#### **Step 5: Add tests in the \"Scripts\" tab**\n\nAdding tests to your requests can help you confirm that your API is working as expected. You can write test scripts in JavaScript and view the output in the \"Test Results\" tab.\n\n<img src=\"https://content.pstmn.io/fa30ea0a-373d-4545-a668-e7b283cca343/aW1hZ2UucG5n\" alt=\"\" height=\"1530\" width=\"2162\">\n\n## 💪 Pro tips\n\n- Use folders to group related requests and organize the collection.\n    \n- Add more [scripts](https://learning.postman.com/docs/writing-scripts/intro-to-scripts/) to verify if the API works as expected and execute workflows.\n    \n\n## 💡Related templates\n\n[API testing basics](https://go.postman.co/redirect/workspace?type=personal&collectionTemplateId=e9a37a28-055b-49cd-8c7e-97494a21eb54&sourceTemplateId=ddb19591-3097-41cf-82af-c84273e56719)  \n[API documentation](https://go.postman.co/redirect/workspace?type=personal&collectionTemplateId=e9c28f47-1253-44af-a2f3-20dce4da1f18&sourceTemplateId=ddb19591-3097-41cf-82af-c84273e56719)  \n[Authorization methods](https://go.postman.co/redirect/workspace?type=personal&collectionTemplateId=31a9a6ed-4cdf-4ced-984c-d12c9aec1c27&sourceTemplateId=ddb19591-3097-41cf-82af-c84273e56719)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25309131"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "createuser",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Gokilavani M\",\r\n    \"email\":\"gok@gmail.com\",\r\n    \"password\":\"gok@123\" \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/api/user/createUser",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"user",
+								"createUser"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getUser",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MDYzZDQzN2QzNzRhZDcxY2Q5OWI0YSIsImlhdCI6MTcyODkxNDgxNSwiZXhwIjoxNzI4OTE1NzE1fQ.OWd4ODvUkPgF1PCLUTgBrTO-3x0H95IVRU6OpqAzYlc",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:5000/api/user/getuserById/67063d437d374ad71cd99b4a",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"user",
+								"getuserById",
+								"67063d437d374ad71cd99b4a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "loginUser",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"gok@gmail.com\",\r\n    \"password\":\"gok@123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/api/user/loginuser",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"user",
+								"loginuser"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "refreshToken",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n     \"refreshToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MDYzZDQzN2QzNzRhZDcxY2Q5OWI0YSIsImlhdCI6MTcyODQ2MjYxMCwiZXhwIjoxNzI5MDY3NDEwfQ.j8i-t4oEG2LUrm-Kd3v4158ejDDtIPWkuRpT-gWGgdM\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/api/user/refresh-token",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"user",
+								"refresh-token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MDYzZDQzN2QzNzRhZDcxY2Q5OWI0YSIsImlhdCI6MTcyODkxNDgxNSwiZXhwIjoxNzI4OTE1NzE1fQ.OWd4ODvUkPgF1PCLUTgBrTO-3x0H95IVRU6OpqAzYlc",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:5000/api/user/getallUsers",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"user",
+								"getallUsers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateUser",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MDYzZDQzN2QzNzRhZDcxY2Q5OWI0YSIsImlhdCI6MTcyODkxNDgxNSwiZXhwIjoxNzI4OTE1NzE1fQ.OWd4ODvUkPgF1PCLUTgBrTO-3x0H95IVRU6OpqAzYlc",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"sanjeev\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/api/user/updateUserById/67063d437d374ad71cd99b4a",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"user",
+								"updateUserById",
+								"67063d437d374ad71cd99b4a"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "course",
+			"item": [
+				{
+					"name": "createCourse",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"title\": \"JavaScript \",\r\n  \"description\": \" JavaScript programming.\",\r\n  \"duration\": \"2 hours\",\r\n  \"category\": \"Programming JavaScript\",\r\n  \"createdBy\":\"67063cd97d374ad71cd99b46\",\r\n  \"chapters\": [\r\n    {\r\n      \"name\": \"Chapter 1: Introduction\",\r\n      \"topics\": [\r\n        {\r\n          \"title\": \"What is JavaScript?\",\r\n          \"description\": \"An updated introduction to JavaScript.\",\r\n          \"content\": \"JavaScript is a powerful programming language used to create interactive websites.\"\r\n        }\r\n      ]\r\n    }\r\n  ]\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/api/course/createCourse",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"course",
+								"createCourse"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getcourseData",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/api/course/getCousreById/670d3151282b00522ef24a5c",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"course",
+								"getCousreById",
+								"670d3151282b00522ef24a5c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Getallcourses",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/api/course/getAllCourses",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"course",
+								"getAllCourses"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateCourse",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Updated JavaScript course\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/api/course/updateCourseById/670d3151282b00522ef24a5c",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"course",
+								"updateCourseById",
+								"670d3151282b00522ef24a5c"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Discussion",
+			"item": [
+				{
+					"name": "createDiscussion",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MDYzZDQzN2QzNzRhZDcxY2Q5OWI0YSIsImlhdCI6MTcyODkyMzUxNywiZXhwIjoxNzI4OTI0NDE3fQ.e0Wzmr--BDZuW-Quu3w8HVMTPfYGkNvksthWcRq9mJ0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Frontend Frameworks Comparison\",\r\n    \"content\": \"Let's discuss the pros and cons of React, Vue, and Angular.\",\r\n    \"course\": \"670d344c427e2cf887718fb1\"\r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/api/discussion/createDiscussion",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"discussion",
+								"createDiscussion"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getdiscussion",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MDYzZDQzN2QzNzRhZDcxY2Q5OWI0YSIsImlhdCI6MTcyODkyMzUxNywiZXhwIjoxNzI4OTI0NDE3fQ.e0Wzmr--BDZuW-Quu3w8HVMTPfYGkNvksthWcRq9mJ0",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:5000/api/discussion/discussionById/670d43f9efc28350d8da8ffc",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"discussion",
+								"discussionById",
+								"670d43f9efc28350d8da8ffc"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAllDiscussion",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MDYzZDQzN2QzNzRhZDcxY2Q5OWI0YSIsImlhdCI6MTcyODkyNDA0MiwiZXhwIjoxNzI4OTI3MzQyfQ.dFQTQtCSpcVxnIT4AKVlxCZ1y7hjPY6tyZ__-ySjMbg",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:5000/api/discussion/getalldiscussion/670d3151282b00522ef24a5c",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"discussion",
+								"getalldiscussion",
+								"670d3151282b00522ef24a5c"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateDiscussion",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MDYzZDQzN2QzNzRhZDcxY2Q5OWI0YSIsImlhdCI6MTcyODkyNDA0MiwiZXhwIjoxNzI4OTI3MzQyfQ.dFQTQtCSpcVxnIT4AKVlxCZ1y7hjPY6tyZ__-ySjMbg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Frontend Frameworks \",\r\n    \"content\": \"Let's discuss the pros  and Angular.\"\r\n    \r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/api/discussion/updatediscussion/670d47adefc28350d8da9012",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"discussion",
+								"updatediscussion",
+								"670d47adefc28350d8da9012"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addComment",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MDYzZDQzN2QzNzRhZDcxY2Q5OWI0YSIsImlhdCI6MTcyODkyNDA0MiwiZXhwIjoxNzI4OTI3MzQyfQ.dFQTQtCSpcVxnIT4AKVlxCZ1y7hjPY6tyZ__-ySjMbg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"content\": \"This is a very informative discussion on JavaScript ES6 features! \"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/api/discussion/670d4795efc28350d8da900f/addcomment",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"discussion",
+								"670d4795efc28350d8da900f",
+								"addcomment"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add likes",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MDYzZDQzN2QzNzRhZDcxY2Q5OWI0YSIsImlhdCI6MTcyODkyNDA0MiwiZXhwIjoxNzI4OTI3MzQyfQ.dFQTQtCSpcVxnIT4AKVlxCZ1y7hjPY6tyZ__-ySjMbg",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:5000/api/discussion/670d475eefc28350d8da9007/likeorunlike",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"discussion",
+								"670d475eefc28350d8da9007",
+								"likeorunlike"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "id",
+			"value": "1"
+		},
+		{
+			"key": "base_url",
+			"value": "https://postman-rest-api-learner.glitch.me/"
+		}
+	]
+}
