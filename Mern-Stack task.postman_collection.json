@@ -125,7 +125,7 @@
 					"response": []
 				},
 				{
-					"name": "New Request",
+					"name": "getAllusers",
 					"request": {
 						"method": "GET",
 						"header": [
@@ -181,6 +181,32 @@
 								"user",
 								"updateUserById",
 								"67063d437d374ad71cd99b4a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getprofile",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MGQ1MDQwOTdhNjgxYjMxMTUwNTIyNiIsImlhdCI6MTcyOTA2Mzc3MCwiZXhwIjoxNzI5MDY3MDcwfQ.yPLCwKz_IEZ6t-rUX6KJeXdTDDFnVtIXaOwm5Wk77Qk",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:5000/api/user/profile",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"user",
+								"profile"
 							]
 						}
 					},

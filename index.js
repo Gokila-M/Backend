@@ -4,8 +4,10 @@ import mongoose from "mongoose";
 import courseRoutes from "./routes/course.js"
 import userRoutes from "./routes/user.js"
 import discussionRoutes from "./routes/discussion.js"
+import cors from "cors";
 import dotenv from 'dotenv';
 dotenv.config(); 
+
 const app = express();
 const PORT = process.env.PORT || 8000;
 console.log('JWT_SECRET:', process.env.JWT_SECRET);
@@ -13,6 +15,7 @@ console.log('JWT_REFRESH_SECRET:', process.env.JWT_REFRESH_SECRET);
 
 // Middleware
 app.use(bodyParser.json()); 
+app.use(cors());
 
 // Connect to MongoDB
 mongoose.connect('mongodb://localhost:27017/mern-task', { useNewUrlParser: true, useUnifiedTopology: true })
